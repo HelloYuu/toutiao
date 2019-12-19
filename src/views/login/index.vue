@@ -60,8 +60,18 @@ export default {
   },
   methods: {
     onSubmit () {
-      this.$refs.myForm.validate(function (isOK) {
-        console.log('haha')
+      this.$refs.myForm.validate((isOK) => {
+        if (isOK) {
+          this.$axios({
+            url: '/authorizations',
+            method: 'post',
+            data: this.loginForm
+          }).then(result => {
+            window.localStorage.setItem('user-token', result.data.data.token)
+          }).catch(error => {
+            console.log(error)
+          })
+        }
       })
     }
   }
