@@ -1,8 +1,8 @@
 <template>
   <el-container> <!-- 外层容器  -->
 
-    <el-aside><!-- 侧边栏容器  -->
-    侧边栏容器
+    <el-aside style="height:100vh;background-color:#9ed9ec; width: 220px"><!-- 侧边栏容器  -->
+      <layout-aside></layout-aside>
     </el-aside>
 
     <el-container><!-- 内层容器  -->
@@ -21,8 +21,11 @@
 </template>
 
 <script>
+import layoutAside from '../../components/home/layout-aside'
 export default {
-
+  components: {
+    'layout-aside': layoutAside
+  }
 }
 </script>
 
