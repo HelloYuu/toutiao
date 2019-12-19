@@ -68,8 +68,12 @@ export default {
             data: this.loginForm
           }).then(result => {
             window.localStorage.setItem('user-token', result.data.data.token)
-          }).catch(error => {
-            console.log(error)
+            this.$router.push('/home')
+          }).catch(() => {
+            this.$message({
+              message: '不对呦',
+              type: 'warning'
+            })
           })
         }
       })
