@@ -24,7 +24,7 @@
         </el-form-item>
 
         <el-form-item>
-          <el-button type="success" style="width:100%" @click="onSubmit" >登录</el-button>
+          <el-button type="primary" style="width:100%" @click="onSubmit" >登录</el-button>
         </el-form-item>
 
       </el-form>
@@ -73,19 +73,23 @@ export default {
 .login {
   background-image: url("../../assets/img/login_bg.jpg");
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  // display: flex;
+  // // justify-content: center;
+  // align-items: center;
   .loginbox {
     width: 580px;
     height: 350px;
     background-color: rgba(255, 255, 255, 0.3);
     border: none;
+    float: right;
+    margin-top: 300px;
+    margin-right: 100px;
     .title {
       display: flex;
       justify-content: center;
       img {
-        margin-bottom: 20px;
+        margin-bottom: 10px;
+        height: 80px;
 
       }
     }
