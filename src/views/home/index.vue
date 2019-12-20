@@ -12,7 +12,7 @@
       </el-header>
 
       <el-main><!-- 主要区域容器-->
-        内容
+         <img src="../../assets/img/bilibili.jpg" alt="">
       </el-main>
 
     </el-container>

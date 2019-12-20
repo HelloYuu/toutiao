@@ -3,13 +3,14 @@
     <el-row class="layout-hesder" type="flex" justify="space-between" align="middle">
         <el-col class="left" :span="8">
             <i class="el-icon-s-unfold"></i>
-            <span class="title">哔哩哔哩 (゜-゜)つロ 干杯~-bilibili</span>
+            <!-- <span class="title">哔哩哔哩 (゜-゜)つロ 干杯~-bilibili</span>-->
+            <a class="title" href="https://www.bilibili.com" target="_blank">哔哩哔哩 (゜-゜)つロ 干杯~-bilibili</a>
         </el-col>
         <el-col class="right" :span="4">
             <el-row type="flex" justify="end" align="middle" style="padding-right:10px">
                 <img src="../../assets/img/avatar.jpg" alt="">
                 <el-dropdown>
-                    <span class="el-dropdown-link">
+                    <span class="el-dropdown-link" style="color:rgb(251, 114, 153)">
                       BILI
                       <i class="el-icon-caret-bottom el-icon--right"></i>
                     </span>
