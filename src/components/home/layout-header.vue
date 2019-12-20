@@ -8,10 +8,10 @@
         </el-col>
         <el-col class="right" :span="4">
             <el-row type="flex" justify="end" align="middle" style="padding-right:10px">
-                <img src="../../assets/img/avatar.jpg" alt="">
+                <img :src="useInfo.photo?useInfo.photo:defaultImg" alt="">
                 <el-dropdown>
-                    <span class="el-dropdown-link" style="color:rgb(251, 114, 153)">
-                      BILI
+                    <span class="el-dropdown-link" style="color:rgb(251, 114, 153);padding-left:4px">
+                      {{useInfo.name}}
                       <i class="el-icon-caret-bottom el-icon--right"></i>
                     </span>
                     <el-dropdown-menu slot="dropdown">
@@ -28,7 +28,23 @@
 
 <script>
 export default {
-
+  data () {
+    return {
+      useInfo: {},
+      defaultImg: require('../../assets/img/avatar.jpg')
+    }
+  },
+  created () {
+    let token = window.localStorage.getItem('user-token')
+    this.$axios({
+      url: '/user/profile',
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    }).then(result => {
+      this.useInfo = result.data.data
+    })
+  }
 }
 </script>
 
