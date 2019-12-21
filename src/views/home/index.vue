@@ -1,7 +1,7 @@
 <template>
   <el-container style="background-color:#f4f5f7"> <!-- 外层容器  -->
 
-    <el-aside style="height:100vh;background-color:#fff; width: 220px"><!-- 侧边栏容器  -->
+    <el-aside style="min-height:100vh;background-color:#fff; width: 220px"><!-- 侧边栏容器  -->
       <layout-aside></layout-aside>
     </el-aside>
 
@@ -15,7 +15,6 @@
           <router-view>
 
           </router-view>
-           <img src="../../assets/img/bilibili.jpg" alt="">
 
       </el-main>
 
