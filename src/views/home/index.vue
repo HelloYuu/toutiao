@@ -11,7 +11,7 @@
           <layout-header></layout-header>
       </el-header>
 
-      <el-main><!-- 主要区域容器-->
+      <el-main style="padding:10px"><!-- 主要区域容器-->
          <img src="../../assets/img/bilibili.jpg" alt="">
       </el-main>
 

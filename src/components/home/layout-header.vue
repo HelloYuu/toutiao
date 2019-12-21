@@ -9,15 +9,15 @@
         <el-col class="right" :span="4">
             <el-row type="flex" justify="end" align="middle" style="padding-right:10px">
                 <img :src="useInfo.photo?useInfo.photo:defaultImg" alt="">
-                <el-dropdown>
+                <el-dropdown @command="handle">
                     <span class="el-dropdown-link" style="color:rgb(251, 114, 153);padding-left:4px">
                       {{useInfo.name}}
                       <i class="el-icon-caret-bottom el-icon--right"></i>
                     </span>
                     <el-dropdown-menu slot="dropdown">
-                      <el-dropdown-item>个人信息</el-dropdown-item>
-                      <el-dropdown-item>Git地址</el-dropdown-item>
-                      <el-dropdown-item divided>退出</el-dropdown-item>
+                      <el-dropdown-item command="info">个人信息</el-dropdown-item>
+                      <el-dropdown-item command="git">Git地址</el-dropdown-item>
+                      <el-dropdown-item command="lgout" divided>退出</el-dropdown-item>
                     </el-dropdown-menu>
                 </el-dropdown>
             </el-row>
@@ -44,6 +44,16 @@ export default {
     }).then(result => {
       this.useInfo = result.data.data
     })
+  },
+  methods: {
+    handle (command) {
+      if (command === 'lgout') {
+        window.localStorage.removeItem('user-token')
+        this.$router.push('/login')
+      } else if (command === 'git') {
+        window.localStorage.href = 'www.bilibili.com'
+      }
+    }
   }
 }
 </script>
@@ -51,11 +61,12 @@ export default {
 <style lang="less" scoped>
     .top{
         background-color: #fff;
-
+        // background:url('../../assets/img/header.png') no-repeat ;
         .layout-hesder{
             height: 55px;
             padding: none;
             padding-left: 10px;
+
         .left{
             font-size: 22px;
             color: rgb(251, 114, 153) ;

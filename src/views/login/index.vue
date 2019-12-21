@@ -96,7 +96,7 @@ export default {
     background-color: rgba(255, 255, 255, 0.3);
     border: none;
     float: right;
-    margin-top: 300px;
+    margin-top: 230px;
     margin-right: 100px;
     .title {
       display: flex;
