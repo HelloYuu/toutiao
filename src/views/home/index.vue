@@ -12,7 +12,11 @@
       </el-header>
 
       <el-main style="padding:10px"><!-- 主要区域容器-->
-         <img src="../../assets/img/bilibili.jpg" alt="">
+          <router-view>
+
+          </router-view>
+           <img src="../../assets/img/bilibili.jpg" alt="">
+
       </el-main>
 
     </el-container>
