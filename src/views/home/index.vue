@@ -12,7 +12,7 @@
       </el-header>
 
       <el-main style="padding:10px"><!-- 主要区域容器-->
-          <router-view>
+          <router-view style="height:91.7vh">
 
           </router-view>
 
