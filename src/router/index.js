@@ -20,6 +20,15 @@ const routes = [{
   }, {
     path: '/home/comment',
     component: () => import('../views/comment')
+  }, {
+    path: '/home/material',
+    component: () => import('../views/material')
+  }, {
+    path: '/home/publish',
+    component: () => import('../views/publish')
+  }, {
+    path: '/home/articles',
+    component: () => import('../views/articles')
   }]
 }, {
   // 登录页
