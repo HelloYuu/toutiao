@@ -3,8 +3,8 @@
       <bread-crumb slot="header">
       <template slot="title">素材管理</template>
       </bread-crumb>
-      <el-row type="flex" justify="end">
-          <el-upload :http-request="uploadImg" :show-file-list="false">
+      <el-row type="flex" justify="end" style="display: block;">
+          <el-upload action="" :http-request="uploadImg" :show-file-list="false">
              <el-button size="small" type="primary">点击上传</el-button>
           </el-upload>
       </el-row>
@@ -14,8 +14,8 @@
                 <el-card class="img-card" v-for="item in list" :key="item.id">
                     <img :src="item.url" alt="">
                     <el-row class="operate" type="flex" justify="space-around">
-                        <i class="el-icon-star-off"></i>
-                        <i class="el-icon-delete"></i>
+                        <i @click="collectOrCancel(item)" :style="{color:item.is_collected?'#409EFF':''}" class="el-icon-star-off"></i>
+                        <i @click="delImg(item.id)"  class="el-icon-delete"></i>
                     </el-row>
                 </el-card>
             </div>
@@ -62,6 +62,27 @@ export default {
     }
   },
   methods: {
+    delImg (id) {
+      this.$confirm('你也配删？').then(() => {
+        this.$axios({
+          url: `/user/images/${id}`,
+          method: 'delete'
+        }).then(() => {
+          this.getAllMaterial()
+        })
+      })
+    },
+    collectOrCancel (row) {
+      this.$axios({
+        url: `/user/images/${row.id}`,
+        method: 'put',
+        data: {
+          collect: !row.is_collected
+        }
+      }).then(() => {
+        this.getAllMaterial()
+      })
+    },
     uploadImg (params) {
       this.loading = true
       let form = new FormData()
@@ -128,7 +149,9 @@ export default {
                 width:25px;
                 height:25px;
                 line-height: 30px;
-                color:rgb(251, 114, 153);;
+                color:rgb(251, 114, 153);
+                cursor: pointer;
+
             }
         }
     }
