@@ -66,7 +66,14 @@ export default {
     publishArticle (draft) {
       this.$refs.publishForm.validate((isOk) => {
         if (isOk) {
-          console.log('1111')
+          this.$axios({
+            url: '/articles',
+            method: 'post',
+            params: { draft },
+            data: this.formData
+          }).then(() => {
+            this.$router.push('/home/articles')
+          })
         }
       })
     }
