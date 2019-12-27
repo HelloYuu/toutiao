@@ -1,9 +1,9 @@
 <template>
   <el-card v-loading="loading">
       <bread-crumb slot="header">
-      <template slot="title">素材管理</template>
+        <template slot="title">素材管理</template>
       </bread-crumb>
-      <el-row type="flex" justify="end" style="display: block;">
+      <el-row type="flex" justify="end">
           <el-upload action="" :http-request="uploadImg" :show-file-list="false">
              <el-button size="small" type="primary">点击上传</el-button>
           </el-upload>

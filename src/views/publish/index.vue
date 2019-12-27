@@ -1,8 +1,29 @@
 <template>
   <el-card>
       <bread-crumb slot="header">
-      <template slot="title">发布列表</template>
+        <template slot="title">发布列表</template>
       </bread-crumb>
+      <el-form style="margin-left:30px" label-width="60px">
+        <el-form-item label="标题">
+          <el-input style="width:30%"></el-input>
+        </el-form-item>
+        <el-form-item label="内容">
+          <el-input type="textarea" :rows="4"></el-input>
+        </el-form-item>
+        <el-form-item label="封面">
+          <el-radio>单图</el-radio>
+          <el-radio>三图</el-radio>
+          <el-radio>无图</el-radio>
+          <el-radio>自动</el-radio>
+        </el-form-item>
+        <el-form-item label="频道">
+          <el-select></el-select>
+        </el-form-item>
+        <el-form-item>
+          <el-button>发布</el-button>
+          <el-button type="success">存入草稿</el-button>
+        </el-form-item>
+      </el-form>
   </el-card>
 </template>
 

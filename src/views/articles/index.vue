@@ -5,22 +5,22 @@
       </bread-crumb>
 
       <el-row class="searchTool">
-        <el-col :span="3">
+        <el-col :span="2">
           <span>文章状态 :</span>
         </el-col>
         <el-col :span="18">
           <el-radio-group>
-            <el-radio>全部</el-radio>
-            <el-radio>草稿</el-radio>
-            <el-radio>待审核</el-radio>
-            <el-radio>审核通过</el-radio>
-            <el-radio>审核失败</el-radio>
+            <el-radio :label="5">全部</el-radio>
+            <el-radio :label="0">草稿</el-radio>
+            <el-radio :label="1">待审核</el-radio>
+            <el-radio :label="2">审核通过</el-radio>
+            <el-radio :label="3">审核失败</el-radio>
           </el-radio-group>
         </el-col>
       </el-row>
 
       <el-row class="searchTool">
-        <el-col :span="3">
+        <el-col :span="2">
           <span>频道列表 :</span>
         </el-col>
           <el-col :span="18">
@@ -34,7 +34,7 @@
       </el-row>
 
       <el-row class="searchTool">
-        <el-col :span="3">
+        <el-col :span="2">
           <span>时间选择 :</span>
         </el-col>
         <el-col :span="18">
