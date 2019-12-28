@@ -11,7 +11,7 @@ export default {
 <style lang="less" scoped>
 .home{
     background-image: url("../../assets/img/bilibili.jpg");
-    height:100vh;
+    height:100%;
     background-size:cover;
 }
 </style>

@@ -29,6 +29,18 @@ const routes = [{
   }, {
     path: '/home/articles',
     component: () => import('../views/articles')
+  }, {
+    path: '/home/picture',
+    component: () => import('../views/picture')
+  }, {
+    path: '/home/fansinfo',
+    component: () => import('../views/fansinfo')
+  }, {
+    path: '/home/fanslife',
+    component: () => import('../views/fanslife')
+  }, {
+    path: '/home/fanslist',
+    component: () => import('../views/fanslist')
   }]
 }, {
   // 登录页
