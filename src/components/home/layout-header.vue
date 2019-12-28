@@ -2,7 +2,7 @@
 <div class="top">
     <el-row class="layout-hesder" type="flex" justify="space-between" align="middle">
         <el-col class="left" :span="8">
-            <i class="el-icon-s-unfold"></i>
+             <i @click="collaspseOrOpen" :class="{'el-icon-s-unfold': collaspse,'el-icon-s-fold': !collaspse}"></i>
             <!-- <span class="title">哔哩哔哩 (゜-゜)つロ 干杯~-bilibili</span>-->
             <a class="title" href="https://www.bilibili.com" target="_blank">哔哩哔哩 (゜-゜)つロ 干杯~-bilibili</a>
         </el-col>
@@ -27,27 +27,41 @@
 </template>
 
 <script>
+import eventBus from '../../utils/eventBus'
 export default {
   data () {
     return {
+      collaspse: false,
       useInfo: {},
       defaultImg: require('../../assets/img/avatar.jpg')
     }
   },
   created () {
-    this.$axios({
-      url: '/user/profile'
-    }).then(result => {
-      this.useInfo = result.data
+    this.getUserInfo()
+    eventBus.$on('updateUserInfoSuccess', () => {
+      this.getUserInfo()
     })
   },
   methods: {
-    handle (command) {
-      if (command === 'lgout') {
+    collaspseOrOpen () {
+      this.collaspse = !this.collaspse
+      eventBus.$emit('changeCollapse')
+    },
+    getUserInfo () {
+      this.$axios({
+        url: '/user/profile'
+      }).then(result => {
+        this.userInfo = result.data
+      })
+    },
+    handle (commad) {
+      if (commad === 'lgout') {
         window.localStorage.removeItem('user-token')
         this.$router.push('/login')
-      } else if (command === 'git') {
-        window.localStorage.href = 'www.bilibili.com'
+      } else if (commad === 'git') {
+        window.location.href = 'https://github.com/shuiruohanyu/89heimatoutiao'
+      } else if (commad === 'info') {
+        this.$router.push('/home/account')
       }
     }
   }
