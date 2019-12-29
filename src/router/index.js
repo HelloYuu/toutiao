@@ -41,6 +41,9 @@ const routes = [{
   }, {
     path: '/home/fanslist',
     component: () => import('../views/fanslist')
+  }, {
+    path: '/home/account',
+    component: () => import('../views/account')
   }]
 }, {
   // 登录页
