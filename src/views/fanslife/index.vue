@@ -11,8 +11,8 @@ export default {
     let myChart = echarts.init(this.$refs.myChart)
     myChart.setOption({
       title: {
-        text: '南丁格尔玫瑰图',
-        subtext: 'hee',
+        text: '粉丝概况',
+        // subtext: 'hee',
         x: 'center'
       },
       tooltip: {
@@ -63,7 +63,7 @@ export default {
           },
           data: [
             { value: 10, name: 'rose1' },
-            { value: 5, name: 'rose2' },
+            { value: 12, name: 'rose2' },
             { value: 15, name: 'rose3' },
             { value: 25, name: 'rose4' },
             { value: 20, name: 'rose5' },
@@ -80,7 +80,7 @@ export default {
           roseType: 'area',
           data: [
             { value: 10, name: 'rose1' },
-            { value: 5, name: 'rose2' },
+            { value: 12, name: 'rose2' },
             { value: 15, name: 'rose3' },
             { value: 25, name: 'rose4' },
             { value: 20, name: 'rose5' },

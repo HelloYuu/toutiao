@@ -59,7 +59,7 @@ export default {
         window.localStorage.removeItem('user-token')
         this.$router.push('/login')
       } else if (commad === 'git') {
-        window.location.href = 'https://github.com/shuiruohanyu/89heimatoutiao'
+        window.location.href = 'https://www.bilibili.com'
       } else if (commad === 'info') {
         this.$router.push('/home/account')
       }

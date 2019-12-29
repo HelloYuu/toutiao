@@ -8,6 +8,7 @@ import axios from './utils/request'
 import Component from './components'
 import './permision'
 import './style/theme/index.css'
+
 Vue.prototype.$axios = axios
 Vue.config.productionTip = false
 Vue.use(ElementUI)

@@ -149,7 +149,7 @@ export default {
     },
     // 删除文章
     delArticle (id) {
-      this.$confirm('确定删除？').then(() => {
+      this.$confirm('您也配删除？').then(() => {
         this.$axios({
           url: `/articles/${id.toString()}`,
           method: 'delete'
